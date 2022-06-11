@@ -8,7 +8,7 @@ workflows:
 jobs:
   job:
     machine:
-      image: cimg/base:stable
+      image: ubuntu:latest
 
     steps:
       - checkout
