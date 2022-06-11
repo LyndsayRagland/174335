@@ -8,7 +8,7 @@ workflows:
 jobs:
   job:
     machine:
-      image: ubuntu:latest
+      image: cimg/node:18.3.0
 
     steps:
       - checkout
